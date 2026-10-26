@@ -1,0 +1,1 @@
+Este archivo existe porque la carpeta cache debe existir para el cache de la web. y no pude crearla en github vacia. disfruta del proyecto :D
