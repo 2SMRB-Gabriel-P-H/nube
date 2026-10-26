@@ -43,7 +43,7 @@ function bd(): PDO
     $port = defined('NUBE_DB_PORT') ? NUBE_DB_PORT : (getenv('NUBE_DB_PORT') ?: '3306');
     $user = defined('NUBE_DB_USER') ? NUBE_DB_USER : (getenv('NUBE_DB_USER') ?: 'root');
     $pass = defined('NUBE_DB_PASS') ? NUBE_DB_PASS : (getenv('NUBE_DB_PASS') ?: '');
-    $name = defined('NUBE_DB_NAME') ? NUBE_DB_NAME : (getenv('NUBE_DB_NAME') ?: 'nube');
+    $name = defined('NUBE_DB_NAME') ? NUBE_DB_NAME : (getenv('NUBE_DB_NAME') ?: 'nube_privada');
 
     $opciones = [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

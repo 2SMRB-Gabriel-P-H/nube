@@ -1,0 +1,22 @@
+LimitRequestBody 0
+php_value upload_max_filesize 0
+php_value post_max_size 0
+php_value max_file_uploads 200
+php_value max_execution_time 7200
+php_value max_input_time 0
+
+# Código interno: estas librerías solo se cargan por include, nunca por URL.
+<FilesMatch "^(auth|crypto|db|fs|share)\.php$">
+    Require all denied
+</FilesMatch>
+
+# Ficheros sensibles y de datos: nunca servirlos directamente.
+<FilesMatch "\.(key|pem|sql|bak|log|ini|json|sh|bat|ps1)$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "^(LEEME|README|\.env)">
+    Require all denied
+</FilesMatch>
+
+# No permitir listar directorios.
+Options -Indexes

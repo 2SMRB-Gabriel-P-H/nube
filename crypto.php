@@ -34,7 +34,10 @@ function claveMaestra(): string
         }
     }
 
-    $ruta = getenv('NUBE_MASTER_KEY_FILE') ?: '/etc/nube/nube_master.key';
+    $ruta = getenv('NUBE_MASTER_KEY_FILE');
+    if (!is_string($ruta) || $ruta === '') {
+        $ruta = __DIR__ . DIRECTORY_SEPARATOR . 'private' . DIRECTORY_SEPARATOR . 'nube_master.key';
+    }
     if (!is_file($ruta) || !is_readable($ruta)) {
         throw new RuntimeException('No se puede leer la clave maestra de Nube.');
     }

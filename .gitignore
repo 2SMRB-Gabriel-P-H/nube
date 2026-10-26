@@ -1,0 +1,5 @@
+# Datos de usuario, clave de cifrado y archivos locales: nunca subir al repositorio.
+/files/
+/cache/
+/private/nube_master.key
+/nube_privada.sql
